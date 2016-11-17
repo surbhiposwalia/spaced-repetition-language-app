@@ -20,6 +20,7 @@ angular.module('myApp')
             $scope.currentUserId = "";
             $scope.currentUserName = "";
             $scope.isAuthenticated = false;
+            $scope.startQuiz = false;
         }
         $scope.logout = logout;
 
@@ -58,10 +59,41 @@ angular.module('myApp')
             $scope.showResult = true;
             if($scope.currentAnswer == userInputAnswer){
                 $scope.answerFlag = true;
+                $scope.answerStatus = 'correct';
             }
-            else { $scope.answerFlag = false; }
+            else {
+                $scope.answerFlag = false;
+                $scope.answerStatus = 'incorrect';
+            }
         }
         $scope.checkAnswer = checkAnswer;
         
-        
+        var nextQuestionGenerator = function(){
+            var request = {
+                 method: 'POST',
+                 url: 'app/v1/question/?access_token='+$scope.accessToken,
+                 headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                 },
+                 data: JSON.stringify({
+                           currentUserId: $scope.currentUserId,
+                           answerFlag: $scope.answerStatus
+                       })
+                }
+                
+                $http(request)
+                    .then(function(response){
+                        $scope.startQuiz = true;
+                        $scope.showResult = false;
+                        console.log(response.data);
+                        var currentQuestionObject = response.data;
+                        $scope.result = currentQuestionObject.result;
+                        $scope.currentQuestionId = currentQuestionObject.questionObject._id;
+                        $scope.currentQuestion = currentQuestionObject.questionObject.question;
+                        $scope.currentAnswer = currentQuestionObject.questionObject.answer;      
+                    }
+                );
+        }
+        $scope.nextQuestionGenerator = nextQuestionGenerator;
     }]);

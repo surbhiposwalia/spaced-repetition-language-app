@@ -1,29 +1,41 @@
+
+
 html{
-  font-family: 'Roboto', sans-serif;
-  color: white;
+  font-family: 'Roboto', sans-serif, bold;
+   background-image:url('../assets/french-english.jpg');
+  filter: alpha(opacity=60);
+  color: black;
 }
 
 body {
-  background: #3f51b5;
+ 
   width: 100%;
   margin: 0;
+  filter: alpha(opacity=100);
+  font-size: 30px;
 
+}
+img{
+  display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    transition: 0.3s;
 }
 
 h1 {
   width: auto;
-  height:40px;
-  background: #303f9f;
-  color: white;
-  font-size: 30px;
+  height:60px;
+  color: black;
+  font-size: 60px;
   margin-top:2px;
 }
 
 
 h3 {
-  color: white;
+  
   text-align: center;
-  font-size: 25px;
+  font-size: 40px;
 }
 
 .g-signin2 {
@@ -42,15 +54,20 @@ input{
 }
 
 .button{
-    background-color: #311B92;
+    background-color: #3071A9;
     border: none;
-    color: white;
     border-radius: 5px;
     padding: 12px 31px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 11px;
+    font-size: 25px;
+    color:black;
+}
+
+.button:hover{
+  background: #00ffff;
+  box-shadow: inset 0 0 0 5px #3071A9;
 }
 
 .quiz-card{
@@ -69,3 +86,71 @@ div{
   
   
 }
+
+.logout{
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    font-size:30px;
+    color: black;
+}
+
+.logout:hover{
+  color : #00ffff;
+}
+
+.inputAnswer,.close-icon,.inputAnswer-wrapper {
+	position: relative;
+	padding: 10px;
+}
+.inputAnswer-wrapper {
+	width: 100px;
+	margin: auto;
+	margin-top: 50px;
+	height :35px;
+}
+.inputAnswer{
+	width: 27%;
+	border: 1px solid #ccc;
+  outline: 0;
+  border-radius: 15px;
+  font-size:25px;
+  height : 30px;
+}
+.inputAnswer:focus {
+	box-shadow: 0 0 15px 5px #b0e0ee;
+	border: 2px solid #bebede;
+}
+.close-icon {
+	border:1px solid transparent;
+	background-color: transparent;
+	display: inline-block;
+	vertical-align: middle;
+  outline: 0;
+  cursor: pointer;
+}
+.close-icon:after {
+	content: "X";
+	display: block;
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	background-color: #FA9595;
+	z-index:1;
+	right: 50px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	padding: 2px;
+	border-radius: 50%;
+	text-align: center;
+	color: white;
+	font-weight: normal;
+	font-size: 12px;
+	box-shadow: 0 0 2px #E50F0F;
+	cursor: pointer;
+}
+.inputAnswer:not(:valid) ~ .close-icon {
+	display: none;
+}
+
