@@ -29,35 +29,39 @@ angular.module('myApp')
         $scope.currentAnswer = '';
         
         $scope.initialize = function() {
-           
+           $scope.startQuiz = true;
             getQuestionObject();
         }
         
         var getQuestionObject = function(){
-            $scope.startQuiz = true;
+            
             console.log($scope.accessToken);
-           $http.get('question/'+$scope.currentUserId+'?access_token='+$scope.accessToken)
+            $http.get('question/'+$scope.currentUserId+'?access_token='+$scope.accessToken)
                 .then(function(response){
                     $scope.startQuiz = true;
+                    $scope.showResult = false;
                     console.log(response.data);
                     var currentQuestionObject = response.data;
                     $scope.result = currentQuestionObject.result;
                     $scope.currentQuestionId = currentQuestionObject.questionObject._id;
                     $scope.currentQuestion = currentQuestionObject.questionObject.question;
                     $scope.currentAnswer = currentQuestionObject.questionObject.answer;
-                    $location.path('/quiz');
+                    
                 });
                 console.log($scope.currentQuestionId); 
         };
-        
         $scope.getQuestionObject = getQuestionObject;
        
         
-        
+        $scope.userInputAnswer;
         var checkAnswer = function(userInputAnswer){
-            if($scope.currentQuestionId === userInputAnswer){
-                $scope.answerFlag = false;
+            $scope.showResult = true;
+            if($scope.currentAnswer == userInputAnswer){
+                $scope.answerFlag = true;
             }
-            else { $scope.answerFlag = true; }
+            else { $scope.answerFlag = false; }
         }
+        $scope.checkAnswer = checkAnswer;
+        
+        
     }]);
