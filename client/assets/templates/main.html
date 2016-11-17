@@ -1,0 +1,28 @@
+<div>
+   <div ng-if="!isAuthenticated && !startQuiz" className="welcome-page">
+        <h1>FrenchX</h1><br/>
+        <h3>Learn Languages Through Spaced Repetition</h3><br/>
+        <a href="/auth/google"><img src="../assets/thegoogle.png" /></a>
+    </div>
+    <div ng-if="isAuthenticated && !startQuiz" className="welcome-page">
+        <h2>Welcome, {{currentUserName}}!{{accessToken}}</h2>
+        <a href="" ng-click="logout()">Logout</a>
+        <h1>FrenchX</h1><br/><button ng-click="$event.preventDefault();initialize();">Ready to French it up? </button>
+        <h3>Learn Languages Through Spaced Repetition</h3><br/>
+    </div>
+</div>
+<div ng-if="startQuiz">
+    <label>Question {{currentQuestion}}</label><br />
+    <span ng-model="userInputAnswer">Enter your answer here:</span>
+    <input type="text" />
+    <input className ='button' type = "submit" name="submit" ng-click = "checkAnswer(userInputAnswer)" ></input>
+    <p class="result">Score:{{result}}</p>
+    <p class="result">Correct answer count:{{result/10}}</p>
+</div>
+<div ng-if="answerFlag && startQuiz" className="quiz-card">
+    <label>Question</label><br />
+    <p>Good Job!!!</p>
+    <input className ='button' type = "submit" className="next" value="Next Question" name = "next" ng-click="" />
+    <p>Score: </p>
+    <p>Count: </p>
+</div>

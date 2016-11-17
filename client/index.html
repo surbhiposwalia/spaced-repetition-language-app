@@ -9,7 +9,9 @@
 <link rel="stylesheet" href="css/{{name}}.{{version}}{{#production}}.min{{/production}}.css">
 
 <!-- Your HTML goes here -->
-<div id="app"></div>
+<body ng-app="myApp" ng-init="init()">
+    <div ng-view></div>
+</body>
 <script src="js/{{name}}.{{version}}{{#production}}.min{{/production}}.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.5.8/angular-resource.min.js"></script>
