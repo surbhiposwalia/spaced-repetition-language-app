@@ -35,8 +35,6 @@ angular.module('myApp')
         }
         
         var getQuestionObject = function(){
-            
-            console.log($scope.accessToken);
             $http.get('question/'+$scope.currentUserId+'?access_token='+$scope.accessToken)
                 .then(function(response){
                     $scope.startQuiz = true;
@@ -49,7 +47,6 @@ angular.module('myApp')
                     $scope.currentAnswer = currentQuestionObject.questionObject.answer;
                     
                 });
-                console.log($scope.currentQuestionId); 
         };
         $scope.getQuestionObject = getQuestionObject;
        
@@ -86,7 +83,6 @@ angular.module('myApp')
                     .then(function(response){
                         $scope.startQuiz = true;
                         $scope.showResult = false;
-                        console.log(response.data);
                         var currentQuestionObject = response.data;
                         $scope.result = currentQuestionObject.result;
                         $scope.currentQuestionId = currentQuestionObject.questionObject._id;
@@ -96,4 +92,9 @@ angular.module('myApp')
                 );
         }
         $scope.nextQuestionGenerator = nextQuestionGenerator;
-    }]);
+    }])
+.directive('quiz', function() {
+  return {
+    templateUrl: '/assets/templates/quiz.html'
+  };
+});

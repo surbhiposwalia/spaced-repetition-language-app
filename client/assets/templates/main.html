@@ -12,37 +12,5 @@
         <h3>Learn Languages Through Spaced Repetition</h3><br/>
     </div>
 </div>
-<div ng-if="startQuiz && !showResult && isAuthenticated">
-    <h1>FrenchX</h1>
-    <a class="logout" href="" ng-click="logout()">Logout</a>
-    <h3>what do you call "{{currentQuestion}}" in French??</h3><br />
-    <div class="search-wrapper">
-        <form>
-    <input ng-model="userInputAnswer" class="inputAnswer" placeholder="Enter french word here.." type="text" />
-    <button class="close-icon" type="reset"></button>
-    </form>
-    </div>
-    <input class ='button' type = "submit" name="submit" ng-click = "checkAnswer(userInputAnswer);" ></input>
-    
-    <p class="result">Score:{{result}}</p>
-    <p class="result">Correct answer count:{{result/10}}</p>
-</div>
-<div ng-if="answerFlag && showResult && isAuthenticated" className="quiz-card">
-    <h1>FrenchX</h1>
-    <a class="logout" href="" ng-click="logout()">Logout</a>
-    <h3>what do you call "{{currentQuestion}}" in French??</h3><br />
-    <p>Good Job!!!</p>
-    <input class ='button' type = "submit"  value="Next Question" name = "next" ng-click="nextQuestionGenerator()" />
-   <p>Score:{{result+10}} </p>
-    <p>Count: {{(result/10)+1}}</p>
-</div>
-<div ng-if="!answerFlag && showResult && isAuthenticated" className="quiz-card">
-    <h1>FrenchX</h1>
-    <a class="logout" href="" ng-click="logout()">Logout</a>
-    <h3>Question</label><h3 />
-    <p>Sorry! The correct answer is "{{currentAnswer}}" </p>
-    
-    <input class ='button' type = "submit" class="next" value="Next Question" name = "next" ng-click="nextQuestionGenerator()" />
-    <p>Score:{{result}} </p>
-    <p>Count: {{result/10}}</p>
-</div>
+
+<quiz></quiz>
