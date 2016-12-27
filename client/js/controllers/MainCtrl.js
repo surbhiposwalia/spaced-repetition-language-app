@@ -2,7 +2,6 @@ import angular from 'angular';
 
 angular.module('myApp')
     .controller('MainCtrl',['$scope','$resource','$window', '$http','$location', function($scope, $resource, $window, $http, $location){
-     
         var getUser = function() {
             if($window.location.search != ""){
                 $scope.userInfo = $window.location.search;
@@ -11,6 +10,7 @@ angular.module('myApp')
                 $scope.currentUserId = newArr[1].slice(newArr[1].indexOf('=')+1);
                 $scope.currentUserName = newArr[2].slice(newArr[2].indexOf('=')+1);
                 $scope.isAuthenticated = true;
+                console.log($scope.accessToken);
             }
         }
         $scope.getUser = getUser();
@@ -93,6 +93,7 @@ angular.module('myApp')
         }
         $scope.nextQuestionGenerator = nextQuestionGenerator;
     }])
+    
 .directive('quiz', function() {
   return {
     templateUrl: '/assets/templates/quiz.html'

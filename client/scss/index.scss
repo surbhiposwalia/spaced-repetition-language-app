@@ -1,17 +1,20 @@
 
 
-html{
+html {
   font-family: 'Roboto', sans-serif, bold;
-   background-image:url('../assets/france-uk-flag.jpg') no-repeat center center fixed;
   
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;  
   color: black;
 }
 
 body {
- 
+  background-image:url('https://s12.postimg.org/it5copy2l/eiffel.jpg');
   width: 100%;
   margin: 0;
-  filter: alpha(opacity=100);
+  background-size:cover;
   font-size: 30px;
 
 }
@@ -62,7 +65,7 @@ input{
 }
 
 .button{
-    background-color: #3071A9;
+    background-color: #408F99;
     border: none;
     border-radius: 5px;
     padding: 12px 31px;
@@ -163,3 +166,7 @@ div{
 	display: none;
 }
 
+.result{
+  background-color:white;
+  padding :10px;
+}
