@@ -5,9 +5,9 @@
         <a class="googleLogin" href="/auth/google"><img src="../assets/thegoogle.png" /></a>
     </div>
     <div ng-if="isAuthenticated && !startQuiz" className="welcome-page">
+        <a class="logout" href="" ng-click="logout()">Logout</a><br>
         <h1>FrenchX</h1>
         <h2>Welcome, {{currentUserName}}!</h2>
-        <a class="logout" href="" ng-click="logout()">Logout</a>
         <br/><a href="#" ng-click="$event.preventDefault();initialize();">Ready to French it up?</a>
         <h3>Learn Languages Through Spaced Repetition</h3><br/>
     </div>

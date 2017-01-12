@@ -1,7 +1,7 @@
 <div ng-if="startQuiz && !showResult && isAuthenticated">
+    <a class="logout" href="" ng-click="logout()">Logout</a><br>
     <h1>FrenchX</h1>
-    <a class="logout" href="" ng-click="logout()">Logout</a>
-    <h3>what do you call "{{currentQuestion}}" in French??</h3><br />
+    <h3>What do you call "{{currentQuestion}}" in French??</h3><br />
     <div class="search-wrapper">
         <form>
             <input ng-model="userInputAnswer" class="inputAnswer" placeholder="Enter french word here.." type="text" />
@@ -14,9 +14,9 @@
 </div>
 
 <div ng-if="answerFlag && showResult && isAuthenticated" className="quiz-card">
+    <a class="logout" href="" ng-click="logout()">Logout</a><br>
     <h1>FrenchX</h1>
-    <a class="logout" href="" ng-click="logout()">Logout</a>
-    <h3>what do you call "{{currentQuestion}}" in French??</h3><br />
+    <h3>What do you call "{{currentQuestion}}" in French??</h3><br />
     <p>Good Job!!!</p>
     <input class ='button' type = "submit"  value="Next Question" name = "next" ng-click="nextQuestionGenerator()" />
     <p><span class="result">Score:{{result+10}} <span></p>
@@ -24,8 +24,9 @@
 </div>
 
 <div ng-if="!answerFlag && showResult && isAuthenticated" className="quiz-card">
-    <h1>FrenchX</h1>
     <a class="logout" href="" ng-click="logout()">Logout</a>
+    <br>
+    <h1>FrenchX</h1>
     <h3>Question</label><h3 />
     <p>Sorry! The correct answer is "{{currentAnswer}}" </p>
     <input class ='button' type = "submit" class="next" value="Next Question" name = "next" ng-click="nextQuestionGenerator()" />

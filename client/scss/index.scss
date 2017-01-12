@@ -94,7 +94,7 @@ div{
 
 .logout{
     position: absolute;
-    top: 35px;
+    top: 7px;
     right: 20px;
     font-size:30px;
     color: black;
@@ -164,3 +164,12 @@ div{
   background-color:white;
   padding :10px;
 }
+
+@media only screen and (max-width: 600px) {
+  body {
+    background:url('https://s12.postimg.org/it5copy2l/eiffel.jpg') no-repeat center center fixed;
+    width: 100%;
+    margin: 0;
+    font-size: 20px;
+  }
+} 
