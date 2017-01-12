@@ -10,7 +10,6 @@ angular.module('myApp')
                 $scope.currentUserId = newArr[1].slice(newArr[1].indexOf('=')+1);
                 $scope.currentUserName = newArr[2].slice(newArr[2].indexOf('=')+1);
                 $scope.isAuthenticated = true;
-                console.log($scope.accessToken);
             }
         }
         $scope.getUser = getUser();
@@ -23,12 +22,10 @@ angular.module('myApp')
             $scope.startQuiz = false;
         }
         $scope.logout = logout;
-
         $scope.result = '';
         $scope.currentQuestionId  = '';
         $scope.currentQuestion= '';
         $scope.currentAnswer = '';
-        
         $scope.initialize = function() {
            $scope.startQuiz = true;
             getQuestionObject();
@@ -39,18 +36,14 @@ angular.module('myApp')
                 .then(function(response){
                     $scope.startQuiz = true;
                     $scope.showResult = false;
-                    console.log(response.data);
                     var currentQuestionObject = response.data;
                     $scope.result = currentQuestionObject.result;
                     $scope.currentQuestionId = currentQuestionObject.questionObject._id;
                     $scope.currentQuestion = currentQuestionObject.questionObject.question;
                     $scope.currentAnswer = currentQuestionObject.questionObject.answer;
-                    
                 });
         };
         $scope.getQuestionObject = getQuestionObject;
-       
-        
         $scope.userInputAnswer;
         var checkAnswer = function(userInputAnswer){
             $scope.showResult = true;

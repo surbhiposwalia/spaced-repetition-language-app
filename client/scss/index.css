@@ -3,10 +3,9 @@ html {
   color: black; }
 
 body {
-  background-image: url("https://s12.postimg.org/it5copy2l/eiffel.jpg");
+  background: url("https://s12.postimg.org/it5copy2l/eiffel.jpg") no-repeat center center fixed;
   width: 100%;
   margin: 0;
-  background-size: cover;
   font-size: 30px; }
 
 img {

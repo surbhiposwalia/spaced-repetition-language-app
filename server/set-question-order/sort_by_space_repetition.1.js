@@ -2,7 +2,7 @@ function sortQuestion (questionOrder, answerFlag) {
     var firstQuestionObject = questionOrder.shift();
     
     if(questionOrder.length-1 === 0) {
-                window.location("https://space-repetion-app-surbi.c9users.io/");
+                window.location("https://french-xxx.herokuapp.com/");
         }
         
     if (answerFlag === 'correct' ) {
