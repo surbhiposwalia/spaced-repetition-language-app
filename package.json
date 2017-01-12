@@ -1,6 +1,9 @@
 {
   "name": "thinkful-full-stack-template",
-  "version": "0.0.1",
+  "version": "1.0.0",
+   "engines": {
+    "node": "4.6.1"
+  },
   "description": "A full-stack template for Thinkful students",
   "main": "index.js",
   "main:server": "server/index.js",
@@ -99,5 +102,16 @@
     "react-router": "^3.0.0",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surbhiposwalia/spaced-repetition-language-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/surbhiposwalia/spaced-repetition-language-app/issues"
+  },
+  "homepage": "https://github.com/surbhiposwalia/spaced-repetition-language-app#readme"
 }

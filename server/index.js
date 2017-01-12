@@ -11,15 +11,12 @@ var User = require('./models/user');
 var Questions = require('./models/question');
 var sortQuestion = require('./set-question-order/sort_by_space_repetition');
 var questionFactory = require('./set-question-order/question_factory');
-// var clientIDs = require("./config/client_secret");
 var secrets;
     if (!process.env.CLIENT_ID) secrets = require('./config/client_secret');
 
 var HOST = process.env.HOST;
 var PORT = process.env.PORT || 8080;
 mongoose.Promise = global.Promise;
-
-console.log(`Server running in ${process.env.NODE_ENV} mode`);
 
 app.use(express.static(process.env.CLIENT_PATH));
 app.use(jsonParser);
