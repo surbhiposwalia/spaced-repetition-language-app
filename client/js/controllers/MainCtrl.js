@@ -54,7 +54,7 @@ angular.module('myApp')
         $scope.userInputAnswer;
         var checkAnswer = function(userInputAnswer){
             $scope.showResult = true;
-            if($scope.currentAnswer == userInputAnswer){
+            if($scope.currentAnswer.toLowerCase() == userInputAnswer.toLowerCase()){
                 $scope.answerFlag = true;
                 $scope.answerStatus = 'correct';
             }
