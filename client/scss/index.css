@@ -165,6 +165,17 @@ div {
     border-radius: 5px;
     padding: 12px 31px;
     font-size: 20px;
-    color: #000; } }
+    color: #000; }
+
+  .logout {
+    position: absolute;
+    top: 7px;
+    right: 20px;
+    font-size: 20px;
+    color: #000; }
+
+  .result {
+    background-color: #fff;
+    padding: 8px; } }
 
 /*# sourceMappingURL=index.css.map */
