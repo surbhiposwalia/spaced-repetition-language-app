@@ -143,6 +143,28 @@ div {
     background: url("https://s12.postimg.org/it5copy2l/eiffel.jpg") no-repeat center center fixed;
     width: 100%;
     margin: 0;
-    font-size: 20px; } }
+    font-size: 20px; }
+
+  h3 {
+    font-size: 20px; }
+
+  h1 {
+    font-size: 48px; }
+
+  .inputAnswer {
+    width: 64%;
+    border: 1px solid #ccc;
+    outline: 0;
+    border-radius: 15px;
+    font-size: 18px;
+    height: 30px; }
+
+  .button {
+    background-color: #408F99;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 31px;
+    font-size: 20px;
+    color: #000; } }
 
 /*# sourceMappingURL=index.css.map */
