@@ -2,3 +2,4 @@ build
 node_modules
 *.log
 server/config/client_secret
+mongo_data
