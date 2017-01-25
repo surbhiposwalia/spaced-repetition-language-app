@@ -5,6 +5,8 @@ A Quiz app that helps users learn French. The spaced repetition algorithm was im
 * Live Demo: https://french-xxx.herokuapp.com/#!/
 * GitHub: https://github.com/surbhiposwalia/spaced-repetition-language-app
 
+![Screenshot of FrenchX](client/assets/french-X.png?raw=true "FrenchX")
+
 ## Getting started
 
 ### Working on the project
